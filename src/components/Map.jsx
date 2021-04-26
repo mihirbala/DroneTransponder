@@ -54,7 +54,7 @@ function Map() {
             <h2 className="map-h2">Drone Locator</h2>
             <div className="google-map">
                 <GoogleMapReact
-                bootstrapURLKeys={{ key: 'AIzaSyCkVU8vf2VQF1F43e-A7mkqU-pGo1OE3rE' }}
+                bootstrapURLKeys={{ key: '' }}
                 defaultCenter={defaultLocation}
                 defaultZoom={defaultZoom}>
                     {renderLocationPins()}
