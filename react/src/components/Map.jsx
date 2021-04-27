@@ -24,7 +24,7 @@ function Map() {
     const socketRef = useRef();
 
     useEffect(() => {
-        socketRef.current = io.connect('http://drone-transponder.ue.r.appspot.com:5000');
+        socketRef.current = io.connect('https://drone-transponder.ue.r.appspot.com');
         socketRef.current.on("update_drone_data", data => {
             updateDrones(JSON.parse(data)['drones']);
         });

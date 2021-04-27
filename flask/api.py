@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 from flask_cors import CORS, cross_origin
 from flask_socketio import SocketIO, emit
 import json
@@ -22,6 +22,10 @@ def construct_list():
     for key in drone_data:
         response.append(drone_data[key])
     return response
+
+@app.route('/')
+def home():
+    return render_template("index.html")
 
 @app.route('/update', methods = ["POST"])
 def update_drone():
