@@ -9,7 +9,7 @@
 /coverage
 
 # production
-/build
+/flask/static
 
 # python venv
 /api/venv

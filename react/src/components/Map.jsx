@@ -3,9 +3,12 @@ import GoogleMapReact from 'google-map-react'
 import io from "socket.io-client"
 import './map.css'
 
-const LocationPin = ({ tag}) => (
+const LocationPin = ({tag, alt, spd, state}) => (
     <div className="pin">
-        <p className="pin-text">{tag}</p>
+        <p className="pin-text">Tag: {tag}</p>
+	<p className="pin-text">Altitude: {alt}</p>
+	<p className="pin-text">Airspeed: {spd}</p>
+	<p className="pin-text">State: {state}</p>
     </div>
 )
 
@@ -38,12 +41,15 @@ function Map() {
     
     const renderLocationPins = () => {
         return drones.map((drone, index) => {
-            const {tag, lat, lng} = drone
+            const {tag, lat, lng, alt, spd, state} = drone
             return (
                 <LocationPin
                     lat={lat}
                     lng={lng}
                     tag={tag}
+		    alt={alt}
+		    spd={spd}
+		    state={state}
                 />
             )
         })
